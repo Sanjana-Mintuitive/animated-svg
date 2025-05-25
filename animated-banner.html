@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive SVG Animation</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+    }
+
+    .svg-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2.3 / 1; /* Maintain proportional scaling */
+      overflow: hidden;
+    }
+
+    svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="svg-container">
+    <svg viewBox="0 0 1387 600" preserveAspectRatio="xMidYMid meet">
+
+      <g transform="translate(0, -100)">
+        <!-- Animation Path -->
+        <path id="motionPath"
+              d="M1 451C312.5 552.5 1007 557.5 1387 1"
+              fill="none" stroke="#888" stroke-width="2" stroke-dasharray="5,5" />
+
+        <!-- Animated Images (scaled down for all devices) -->
+        <g transform="translate(-150, 0) scale(0.6)">
+          <image href="https://static.wixstatic.com/media/d9f2c7_0865885ab81a4d2f9380d0b688555f53~mv2.png"
+                 width="300" height="300" />
+          <animateMotion dur="30s" repeatCount="indefinite" begin="-22.5s" rotate="auto">
+            <mpath href="#motionPath" />
+          </animateMotion>
+        </g>
+
+        <g transform="translate(-150, 0) scale(0.6)">
+          <image href="https://static.wixstatic.com/media/d9f2c7_e9cb155b433a44fdb5d646d1620bd258~mv2.png"
+                 width="300" height="300" />
+          <animateMotion dur="30s" repeatCount="indefinite" begin="-17.5s" rotate="auto">
+            <mpath href="#motionPath" />
+          </animateMotion>
+        </g>
+
+        <g transform="translate(-150, 0) scale(0.6)">
+          <image href="https://static.wixstatic.com/media/d9f2c7_1c3a490ba96f4b029fe973958d88114f~mv2.png"
+                 width="300" height="300" />
+          <animateMotion dur="30s" repeatCount="indefinite" begin="-12.5s" rotate="auto">
+            <mpath href="#motionPath" />
+          </animateMotion>
+        </g>
+
+        <g transform="translate(-150, 0) scale(0.6)">
+          <image href="https://static.wixstatic.com/media/d9f2c7_d42b4f0791cd430387039c69e9fe6ba6~mv2.png"
+                 width="300" height="300" />
+          <animateMotion dur="30s" repeatCount="indefinite" begin="-7.5s" rotate="auto">
+            <mpath href="#motionPath" />
+          </animateMotion>
+        </g>
+
+        <g transform="translate(-150, 0) scale(0.6)">
+          <image href="https://static.wixstatic.com/media/d9f2c7_0603f20bf6ff4fb6b042ed5478186b33~mv2.png"
+                 width="300" height="300" />
+          <animateMotion dur="30s" repeatCount="indefinite" begin="-2.5s" rotate="auto">
+            <mpath href="#motionPath" />
+          </animateMotion>
+        </g>
+
+        <!-- Image 6 with delayed visibility to avoid flash -->
+        <g transform="translate(-150, 0) scale(0.6)">
+          <image href="https://static.wixstatic.com/media/d9f2c7_31cec60f2eeb4b8e8fe444f96592d5bd~mv2.png"
+                 width="300" height="300" visibility="hidden">
+            <set attributeName="visibility" to="visible" begin="2.5s" />
+          </image>
+          <animateMotion dur="30s" repeatCount="indefinite" begin="2.5s" rotate="auto">
+            <mpath href="#motionPath" />
+          </animateMotion>
+        </g>
+
+      </g>
+    </svg>
+  </div>
+
+</body>
+</html>
